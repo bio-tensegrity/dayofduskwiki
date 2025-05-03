@@ -1,0 +1,66 @@
+- name: "Protocol: Processing"
+  description: "Protocol Processing is a protocol invented to enlarge manpower of AEGIS Corporation. This protocol is called by an SC member. During this protocol, the gate will always be open. Most ranks have specific duties. Protocol Processing ends manually by SC when the border is getting raided."
+  audio: "https://static.wikia.nocookie.net/day-of-dusk-rbx/images/d/d6/Processing.mp3/revision/latest?cb=20230714140157"
+  procedures:
+    - "Initiate: Stand beside the gate double door card spot and open the door for tagged citizens or AEGIS personnel. If this spot is full, post on side red lines."
+    - "Cadet: Post on lanes and process any civilians and returning AEGIS personnel. If lanes are full, post on side red lines."
+    - "Junior Operative+: Post in booths and process any civilians or returning AEGIS personnel. May also co-host a Basic Awareness Training. If booths are full and there is no BAT ongoing, post on tower post."
+    - "Operative+: May post on the roof or patrol around left cliffs. These posts cannot be 'full'. Can also co-host a Basic Awareness Training."
+    - "Senior Operative+: May host Basic Awareness Training on post-booths. Only 2 BATs can be active per server."
+    - "FA+: Divisionless FA+ may do bin duties if a Site Control personnel gives permission and necessary tools. ARD, SC, MDF, PKSF may also do bin duties without permission."
+
+- name: "Protocol: Incursion"
+  description: "Protocol Incursion is the most common protocol in the border. It is called when AEGIS personnel are unable to safely process civilians due to raider interference. During this protocol, the main gate will be closed, except for Site Control personnel 'Pulsing'."
+  audio: "https://static.wikia.nocookie.net/day-of-dusk-rbx/images/d/de/Incursion.mp3/revision/latest?cb=20230714140154"
+  procedures:
+    - "Operative and above: Report to the roof to defend the facility from raiders."
+    - "Junior Operatives: Post on the tower posts."
+    - "Initiates: Stay on the red lines in the gate room."
+    - "Cadets: Operate lanes in case of pulsing."
+    - "MDF, STHD, PKSF: Patrol the wasteland and engage raiders. Always identify your target before shooting."
+    - "ARD: Commonly posted on bins, doing bin duties."
+    - "Operative+: May access left cliffs as usual. Operative+ below Field Agent are not to go down to the caves."
+    - "Cliffs: May be accessed at any time, but the right defence mountain is closed off by 2 L-2 doors (L-2 keycard required). Operative-Veteran Operative must be posted there by SC. FA+ are free to post there."
+    - "Caves: May only be entered by divisionals and FA+. An explodable wall is found at the end of caves, a common entrance for raiders."
+    - "Sewers: O+ with SC permission or FA+ may post on sewers."
+    - "Rules: Do not shoot at AEGIS personnel in the wasteland. Do not exit the border without permission. Random Killing is not allowed, only shoot at confirmed hostiles. Rules and guidelines are applied during the protocol. (See AEGIS International Discord server, #📜rules-and-guidelines)"
+
+- name: "Protocol: Lockdown"
+  description: "Protocol Lockdown is called whenever there's a raid ongoing in the border, and protocol Incursion isn't enough to stop it. During Protocol Lockdown, all AEGIS Personnel are required to focus on the Roof instead of processing duties. The JO+ tower posts are under lockdown and may not be opened, as well as a few other doors when needed."
+  audio: "https://static.wikia.nocookie.net/day-of-dusk-rbx/images/c/cb/Lockdown.mp3/revision/latest?cb=20230714140156"
+  procedures:
+    - "Academy ranks: Allowed on Roof. This is required because raiders are usually focused on Roof due to the one-way."
+    - "Divisionless: All AEGIS personnel with no division have to post on roof, including Academy ranks. Only operative and above are allowed on cliff."
+    - "PKSF: Takes part in combat and secures all VIPs in the Tower."
+    - "MDF, STHD: Must increase focus on the Roof, Cliffs, etc., to counter the raid."
+    - "SC: Make sure every AEGIS is directed to the Roof. SC are posted near the main gate door, redirecting all coming AEGIS to post on Roof."
+    - "Rules: Academy ranks are allowed on roof. Do not shoot at AEGIS personnel unless you have authority. Do not exit the border without permission. Random Killing is not allowed, only shoot at confirmed hostiles. Guidelines and rules are applied during the protocol. (See AEGIS International, #rules-and-guidelines)"
+
+- name: "Protocol: Infection"
+  description: "Protocol Infection is called when a virus breaks out of containment and spreads uncontrollably among AEGIS personnel, wastelanders, or both. All AEGIS personnel must quarantine in the hangar, follow ARD orders, and comply with containment and disinfection procedures. This protocol includes several sub-protocols for different infection types."
+  procedures:
+    - "General: Quarantine in the hangar by hugging the wall and spacing out. Comply with all ARD orders to resolve the outbreak."
+    - "Protocol Outbreak (Z-C): Called when CZ-131-A is released in the wasteland. Gate is closed, all AEGIS personnel quarantine in the main hangar, hug the walls, and spread out. ARD will seal the container in the wasteland."
+    - "Class A Infection: Called when AEGIS personnel contract a Class A disease (e.g., CZ-131-A). Quarantine in the main hangar, hug the wall, and comply with ARD. Infected are cured by ARD, then moved to the cured hangar and terminated after infection is over."
+    - "Class B Infection: Called when AEGIS personnel contract a Class B disease (e.g., HC-191-B, CRO-342-B). Quarantine in the hangar, hug the wall, and contact ARD for cure. After being cured, personnel are transferred to the cured hangar and terminated after infection is over."
+    - "SV-030-C Infection Contingency: Contact ARD immediately. Follow all ARD orders. Only ToML and higher can override ARD. Infected should isolate, alert others, and wait for ARD to cure them."
+    - "FF-899-A Infection Contingency: ARD enacts 'Altered Incursion' procedures. Facility becomes a safe zone. Notify ARD if you enter the wasteland or contact a wastelander. Decontamination is frequent. During 'Altered Incursion,' follow standard incursion procedures, but wasteland and roof are off-limits."
+
+- name: "Protocol: Invasion"
+  description: "Protocol Invasion is a rare protocol that can only be activated by ToML or Deputy Site Commander+ (Site Control). It is used when Protocol Lockdown is not enough to hold back raiders. Protocol Invasion is divided into three phases."
+  procedures:
+    - "Phase 1: ToML starts a countdown. Before it ends, all AEGIS personnel proceed to the processing line and form three shoulder-to-shoulder lines."
+    - "Phase 2: When the countdown ends, the gate opens and all AEGIS personnel rush into the wasteland to eliminate all raiders in sight. This phase has three rounds, each about 10 minutes. If you die, upon respawning, return to the processing lanes and wait for the next phase. If you die in round 1, you may leave for round 2."
+    - "Phase 3: When the third round ends, all AEGIS personnel return to the facility and resume their original posts. The Invasion is over."
+    - "Rules: Do not walk into any settlement or spawn. Do not pick up any loot or scrap. Random Kill (RK) is not allowed—only shoot when confirmed hostile. Do not Spawn Kill (SK). Guidelines and rules are applied during the protocol. (See AEGIS International, #rules-and-guideline)"
+
+- name: "Protocol: Meltdown"
+  description: "Protocol Meltdown (Evacuation) is called when the reactor core reaches critical temperature and is about to explode. Stage 1 is preparation for evacuation; Stage 2 is when SC opens the gate and evacuation begins. After the reactor explodes and personnel respawn, AEGIS return to their original posts."
+  audio:
+    - "https://static.wikia.nocookie.net/day-of-dusk-rbx/images/9/96/Meltdown.mp3/revision/latest?cb=20230714140156"
+    - "https://static.wikia.nocookie.net/day-of-dusk-rbx/images/3/39/Meltdown_audio.mp3/revision/latest?cb=20220322160314"
+  procedures:
+    - "Stage 1: All personnel prepare for evacuation. Divisionless: Proceed to gate room, SFL behind each ARD, and wait for gate to open. MDF, STHD, PKSF: Proceed to processing line and stay in front of STS. ARD: Ensure all AEGIS follow orders and lead to evacuation tram. SC: Stay behind to ensure everyone evacuates."
+    - "Stage 2: When the gate opens, Divisionless rush to the evacuation tram and escape. MDF, STHD, PKSF rush out first to escort others."
+    - "Aftermath: After the reactor explodes and personnel respawn, all AEGIS return to their original posts."
+    - "Rules: Do not walk into any settlement or spawn. Do not pick up any loot or scrap. Random Kill (RK) is not allowed—only shoot when confirmed hostile. Do not Spawn Kill (SK). Guidelines and rules are applied during the protocol. (See AEGIS International, #rules-and-guideline)" 

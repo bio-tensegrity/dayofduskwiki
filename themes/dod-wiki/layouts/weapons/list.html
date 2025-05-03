@@ -1,0 +1,68 @@
+{{ define "main" }}
+<div class="max-w-7xl mx-auto">
+    <h1 class="text-4xl font-bold text-red-500 mb-8">Weapons</h1>
+    
+    <!-- Filters -->
+    <div class="bg-[#1A1A1A] p-6 rounded-lg mb-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
+                <label class="block text-gray-300 mb-2">Weapon Type</label>
+                <select class="w-full bg-[#2A2A2A] text-gray-100 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                    <option value="">All Types</option>
+                    <option value="pistol">Pistols</option>
+                    <option value="rifle">Rifles</option>
+                    <option value="shotgun">Shotguns</option>
+                    <option value="sniper">Snipers</option>
+                    <option value="melee">Melee</option>
+                </select>
+            </div>
+            <div>
+                <label class="block text-gray-300 mb-2">Rarity</label>
+                <select class="w-full bg-[#2A2A2A] text-gray-100 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                    <option value="">All Rarities</option>
+                    <option value="common">Common</option>
+                    <option value="uncommon">Uncommon</option>
+                    <option value="rare">Rare</option>
+                    <option value="epic">Epic</option>
+                    <option value="legendary">Legendary</option>
+                </select>
+            </div>
+            <div>
+                <label class="block text-gray-300 mb-2">Sort By</label>
+                <select class="w-full bg-[#2A2A2A] text-gray-100 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                    <option value="name">Name</option>
+                    <option value="damage">Damage</option>
+                    <option value="fire_rate">Fire Rate</option>
+                    <option value="accuracy">Accuracy</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Weapons Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {{ range .Pages }}
+        <div class="bg-[#1A1A1A] rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+            <div class="p-6">
+                <h2 class="text-2xl font-bold text-red-500 mb-4">{{ .Title }}</h2>
+                <div class="infobox">
+                    <div class="infobox-content">
+                        <span class="infobox-label">Type:</span>
+                        <span class="infobox-value">{{ .Params.type }}</span>
+                        <span class="infobox-label">Rarity:</span>
+                        <span class="infobox-value">{{ .Params.rarity }}</span>
+                        <span class="infobox-label">Damage:</span>
+                        <span class="infobox-value">{{ .Params.damage }}</span>
+                        <span class="infobox-label">Fire Rate:</span>
+                        <span class="infobox-value">{{ .Params.fire_rate }}</span>
+                        <span class="infobox-label">Accuracy:</span>
+                        <span class="infobox-value">{{ .Params.accuracy }}</span>
+                    </div>
+                </div>
+                <a href="{{ .RelPermalink }}" class="text-red-500 hover:text-red-400 transition-colors mt-4 inline-block">View Details →</a>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }} 

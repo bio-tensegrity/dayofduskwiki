@@ -1,0 +1,88 @@
+# Hugo Configuration File
+# Documentation: https://gohugo.io/getting-started/configuration/
+
+# Site Configuration
+baseURL = "https://dayofdusk.wiki/"
+languageCode = "en-us"
+title = "Day of Dusk Wiki"
+theme = "dod-wiki"
+
+# Build Configuration
+[build]
+  writeStats = true  # For Tailwind CSS optimization
+
+# Output Configuration
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+# Markdown Configuration
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true  # Allow raw HTML in markdown
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ''
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = false
+    style = 'monokai'
+    tabWidth = 4
+
+# Theme Configuration
+[params]
+  # Site Description
+  description = "A comprehensive wiki for the Day of Dusk game"
+  
+  # Social Media Links
+  social = [
+    { name = "Discord", url = "https://discord.gg/dayofdusk" },
+  ]
+
+# GitHub Pages Configuration
+[deployment]
+  [[deployment.targets]]
+    name = "github"
+    URL = "git@github.com:bio-tensegrity/dayofduskwiki.git"
+    branch = "gh-pages"
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "equipment"
+    name = "Equipment"
+    url = "/equipment/"
+    weight = 2
+  [[menu.main]]
+    identifier = "locations"
+    name = "Locations"
+    url = "/locations/"
+    weight = 4
+  [[menu.main]]
+    identifier = "wastelanders"
+    name = "Wastelanders"
+    url = "/wastelanders/"
+    weight = 5
+  [[menu.main]]
+    identifier = "aegis"
+    name = "AEGIS"
+    url = "/aegis/"
+    weight = 6
+  [[menu.main]]
+    identifier = "diseases"
+    name = "Diseases"
+    url = "/diseases/"
+    weight = 7
+  [[menu.main]]
+    identifier = "lore"
+    name = "Lore"
+    url = "/lore/"
+    weight = 8 

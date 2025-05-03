@@ -1,0 +1,31 @@
+# Hugo build output
+/public/
+/resources/
+
+# Node modules
+/node_modules/
+
+# Environment files
+.env
+.env.local
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Hugo specific
+.hugo_build.lock
+
+# Tailwind CSS
+/tailwind.config.js
+/tailwind.css
+
+# Temporary files
+*.tmp
+*.temp 

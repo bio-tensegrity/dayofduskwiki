@@ -1,0 +1,86 @@
+command_groups:
+  - name: "AEGIS Academy"
+    description: "The most junior command group, focused on training and basic duties."
+    ranks:
+      - name: "Initiate"
+        points: 0
+        description: "Equipped with ACAD-1 keycard and P1-TRAINING-E pistol. Main post: the lanes (red lines)."
+      - name: "Cadet"
+        points: 1
+        description: "Operate processing lanes, first step in AEGIS career."
+      - name: "Junior Operative"
+        points: 2
+        description: "Issued G14-6B rifle and P226 sidearm, L-1 keycard. Can post on towers, operate booths, co-host/spectate Basic Awareness Training."
+
+  - name: "Dispatch"
+    description: "Graduates of the Academy, with more freedom and division access."
+    ranks:
+      - name: "Operative"
+        points: 4
+        description: "Official AEGIS member, can post on the roof, attend patrols."
+      - name: "Senior Operative"
+        points: 16
+        description: "Can join divisions (except AIA), host BATs."
+      - name: "Experienced Operative"
+        points: 27
+        description: "Same as Senior Operative, but can join AIA."
+      - name: "Veteran Operative"
+        points: 54
+        description: "Same as Experienced Operative."
+
+  - name: "Command Relay"
+    description: "Higher command, can patrol outside with permission, L-2 keycard, can apply for AOA."
+    ranks:
+      - name: "Field Agent"
+        points: 85
+        description: "Higher command, can patrol outside with permission, L-2 keycard, can apply for AOA."
+      - name: "Senior Field Agent"
+        points: 128
+        description: "Can take up to 5 on patrol, can apply for AOA (not stage 3)."
+      - name: "Experienced Field Agent"
+        points: 172
+        description: "Highest point-based rank, can take up to 7 on patrol, full AOA access."
+
+  - name: "Administered Field Agent"
+    description: "Achieved after AOA graduation. Focused on hosting lessons, can take 10 on patrol."
+    ranks:
+      - name: "Administered Field Agent"
+        description: "Achieved after AOA graduation. Focused on hosting lessons, can take 10 on patrol."
+
+  - name: "Specialist Command"
+    description: "Promoted for exceptional activity in the Academy."
+    ranks:
+      - name: "Specialist"
+        description: "Promoted for exceptional activity in the Academy."
+      - name: "Administered Specialist"
+        description: "Further promotion for outstanding activity."
+
+  - name: "Regional Command"
+    description: "Promotion by High Command/UC+ only. Officers must show exceptional talent and loyalty."
+    ranks:
+      - name: "Officer"
+        description: "Hosts trainings, checks duty states, moderates in-game/Discord, L-3 keycard."
+      - name: "Warrant Officer"
+        description: "Same as Officer."
+      - name: "Veteran Officer"
+        description: "Same as Warrant Officer."
+
+  - name: "Overwatch"
+    description: "Highest authority below High Command. Must be saluted by others."
+    ranks:
+      - name: "Unit Captain"
+        description: "Hosts events, manages medals, exempt from many rules."
+      - name: "Unit Commander"
+        description: "Same as Unit Captain."
+      - name: "Unit Marshal"
+        description: "Trial for Table of Military Leadership."
+
+  - name: "High Command"
+    description: "Promotion for exceptional perseverance and devotion."
+    ranks:
+      - name: "Table of Military Leadership (ToML)"
+        description: "Manages roleplay, rules, divisions, L-4 keycard."
+      - name: "Inspectorate Committee"
+        description: "Handles ethics and ToML reports."
+      - name: "Chairman"
+        description: "Absolute ruler of AEGIS." 

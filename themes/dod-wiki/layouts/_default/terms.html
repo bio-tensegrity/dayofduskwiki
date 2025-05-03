@@ -1,0 +1,12 @@
+{{ define "main" }}
+<div class="max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold text-red-500 mb-8">{{ .Title }}</h1>
+    <ul>
+        {{ range .Data.Terms.Alphabetical }}
+            <li>
+                <a href="{{ .Page.Permalink }}" class="text-red-400 hover:underline">{{ .Term }}</a>
+            </li>
+        {{ end }}
+    </ul>
+</div>
+{{ end }} 

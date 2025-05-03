@@ -1,0 +1,66 @@
+{{ define "main" }}
+<div class="max-w-7xl mx-auto">
+    <h1 class="text-4xl font-bold text-red-500 mb-8">Locations</h1>
+
+    <!-- Overview -->
+    <div class="bg-[#1A1A1A] rounded-lg p-6 mb-8">
+        <div class="prose prose-invert max-w-none">
+            {{ .Content }}
+        </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="bg-[#1A1A1A] p-6 rounded-lg mb-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+                <label class="block text-gray-300 mb-2">Region</label>
+                <select class="w-full bg-[#2A2A2A] text-gray-100 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                    <option value="">All Regions</option>
+                    <option value="north">North</option>
+                    <option value="north-east">North East</option>
+                    <option value="north-west">North West</option>
+                    <option value="south">South</option>
+                    <option value="south-east">South East</option>
+                    <option value="south-west">South West</option>
+                    <option value="center">Center</option>
+                </select>
+            </div>
+            <div>
+                <label class="block text-gray-300 mb-2">Danger Level</label>
+                <select class="w-full bg-[#2A2A2A] text-gray-100 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                    <option value="">All Levels</option>
+                    <option value="safe">Safe</option>
+                    <option value="moderate">Moderate</option>
+                    <option value="dangerous">Dangerous</option>
+                    <option value="lethal">Lethal</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Locations Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {{ range .Pages }}
+        <div class="bg-[#1A1A1A] rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+            <div class="p-6">
+                <h2 class="text-2xl font-bold text-red-500 mb-4">{{ .Title }}</h2>
+                <div class="infobox">
+                    <div class="infobox-content">
+                        <span class="infobox-label">Region:</span>
+                        <span class="infobox-value">{{ .Params.region }}</span>
+                        <span class="infobox-label">Danger Level:</span>
+                        <span class="infobox-value">{{ .Params.danger_level }}</span>
+                        <span class="infobox-label">Resources:</span>
+                        <span class="infobox-value">{{ .Params.resources }}</span>
+                    </div>
+                </div>
+                <div class="prose prose-invert max-w-none mt-4">
+                    {{ .Summary }}
+                </div>
+                <a href="{{ .RelPermalink }}" class="text-red-500 hover:text-red-400 transition-colors mt-4 inline-block">View Details →</a>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }} 

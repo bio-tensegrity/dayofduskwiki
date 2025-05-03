@@ -1,0 +1,68 @@
+{{ define "main" }}
+<div class="max-w-3xl mx-auto">
+    <a href="/equipment/" class="inline-block mb-4 px-4 py-2 bg-[#2A2A2A] text-red-400 rounded hover:bg-[#222] hover:text-red-300 transition">&larr; Back to Equipment</a>
+    <div class="bg-[#1A1A1A] rounded-lg p-6 mb-8">
+        <div class="flex flex-col md:flex-row md:items-center gap-6">
+            {{ with .Params.image }}
+            <img src="{{ . }}" alt="{{ $.Title }}" class="w-16 h-16 md:w-20 md:h-20 object-contain rounded bg-[#2A2A2A] mb-4 md:mb-0">
+            {{ end }}
+            <div class="flex-1">
+                <h1 class="text-4xl font-bold text-red-500 mb-2">{{ .Title }}</h1>
+                <div class="text-gray-300 text-lg mb-2">
+                    <span class="font-semibold">Type:</span> {{ .Params.weapon_type | default .Params.type }}
+                    {{ with .Params.tags }}<span class="ml-4 font-semibold">Tags:</span> {{ delimit . ", " }}{{ end }}
+                </div>
+                {{ if eq .Params.type "AEGIS" }}
+                <div class="text-gray-400 mb-2">
+                    <span class="font-semibold">Damage:</span> {{ .Params.damage }}
+                    <span class="ml-4 font-semibold">Armour Penetration:</span> {{ .Params.armour_penetration }}
+                    <span class="ml-4 font-semibold">Max Ammo:</span> {{ .Params.max_ammo }}
+                </div>
+                {{ else if eq .Params.type "Weapon" }}
+                <div class="text-gray-400 mb-2">
+                    <span class="font-semibold">Damage:</span> {{ .Params.damage }}
+                    <span class="ml-4 font-semibold">Fire Rate:</span> {{ .Params.fire_rate }}
+                    <span class="ml-4 font-semibold">Accuracy:</span> {{ .Params.accuracy }}
+                </div>
+                {{ else if eq .Params.type "Tool" }}
+                <div class="text-gray-400 mb-2">
+                    <span class="font-semibold">Function:</span> {{ .Params.function }}
+                </div>
+                {{ with .Params.price }}
+                <div class="text-gray-400 mb-2">
+                    <span class="font-semibold">Price:</span> {{ . }}
+                </div>
+                {{ end }}
+                {{ with .Params.gamepass_link }}
+                <div class="text-gray-400 mb-2">
+                    <a href="{{ . }}" target="_blank" class="text-red-500 hover:text-red-400 underline">Gamepass Link</a>
+                </div>
+                {{ end }}
+                {{ end }}
+                {{/* Render the pill (blockquote) if present, and remove it from below */}}
+                {{ $pill := "" }}
+                {{ $lines := split .RawContent "\n" }}
+                {{ range $lines }}
+                    {{ if and (eq (substr . 0 1) ">") (eq $pill "") }}
+                        {{ $pill = . }}
+                    {{ end }}
+                {{ end }}
+                {{ if ne $pill "" }}
+                <div class="bg-red-900 text-red-200 text-xs px-3 py-2 rounded font-semibold mb-2 mt-2">
+                    {{ $pill | plainify | markdownify }}
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+    <div class="bg-[#1A1A1A] rounded-lg p-6 mb-8 prose prose-invert">
+        {{/* Render the rest of the content, skipping the pill line */}}
+        {{ $lines := split .RawContent "\n" }}
+        {{ range $lines }}
+            {{ if not (eq (substr . 0 1) ">") }}
+                {{ . | markdownify }}
+            {{ end }}
+        {{ end }}
+    </div>
+</div>
+{{ end }} 

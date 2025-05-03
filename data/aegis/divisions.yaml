@@ -1,0 +1,6 @@
+- name: "kazoo division"
+  description: "this is a template."
+  responsibilities:
+    - "kill"
+  equipment:
+    - "a"

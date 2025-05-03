@@ -1,0 +1,232 @@
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1A1A1A;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #444;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+/* Custom Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(rgba(18,18,18,0.85), rgba(18,18,18,0.95)), url('/images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Infobox Styling */
+.infobox {
+    background: #1A1A1A;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+}
+
+.infobox-title {
+    color: #FF0000;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #333;
+    padding-bottom: 0.5rem;
+}
+
+.infobox-content {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem 1rem;
+}
+
+.infobox-label {
+    color: #999;
+    font-weight: 500;
+}
+
+.infobox-value {
+    color: #FFF;
+}
+
+/* Table Styling */
+.wiki-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+.wiki-table th,
+.wiki-table td {
+    padding: 0.75rem;
+    border: 1px solid #333;
+    text-align: left;
+}
+
+.wiki-table th {
+    background: #1A1A1A;
+    color: #FF0000;
+    font-weight: 600;
+}
+
+.wiki-table tr:nth-child(even) {
+    background: #1A1A1A;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .infobox-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .wiki-table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+/* Code Block Styling */
+pre {
+    background: #1A1A1A;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 1rem;
+    overflow-x: auto;
+}
+
+code {
+    font-family: 'Roboto Mono', monospace;
+    color: #FF0000;
+}
+
+/* Link Styling */
+a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Image Styling */
+.wiki-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+/* Alert Boxes */
+.alert {
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.alert-warning {
+    background: rgba(255, 0, 0, 0.1);
+    border: 1px solid #FF0000;
+    color: #FF0000;
+}
+
+.alert-info {
+    background: rgba(0, 123, 255, 0.1);
+    border: 1px solid #007BFF;
+    color: #007BFF;
+}
+
+/* Collapsible Sections */
+.collapsible {
+    background: #1A1A1A;
+    border: 1px solid #333;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.collapsible-header {
+    padding: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.collapsible-content {
+    padding: 1rem;
+    border-top: 1px solid #333;
+    display: none;
+}
+
+.collapsible.active .collapsible-content {
+    display: block;
+}
+
+.equipment-bg {
+    position: relative;
+    z-index: 1;
+}
+.equipment-bg::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(rgba(18,18,18,0.85), rgba(18,18,18,0.95)), url('https://i.imgur.com/oGTESY9.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.aegis-bg {
+    position: relative;
+    z-index: 1;
+}
+.aegis-bg::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(rgba(18,18,18,0.85), rgba(18,18,18,0.95)), url('https://i.imgur.com/9FJ9iUj.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.home-bg {
+    position: relative;
+    z-index: 1;
+}
+.home-bg::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(rgba(18,18,18,0.85), rgba(18,18,18,0.95)), url('https://i.imgur.com/bwRGAnP.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1;
+    pointer-events: none;
+} 

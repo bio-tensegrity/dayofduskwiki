@@ -1,0 +1,32 @@
+{{ define "main" }}
+<div class="max-w-7xl mx-auto home-bg">
+    <!-- Hero Section -->
+    <section class="text-center py-12">
+        <h1 class="text-4xl md:text-6xl font-bold text-red-500 mb-6">Day of Dusk Wiki</h1>
+        <p class="text-xl text-gray-300 mb-8">Official resource for Day of Dusk: The Border. Find factual information about gameplay, equipment, locations, and more.</p>
+        <div class="flex justify-center space-x-4">
+            <a href="https://www.roblox.com/games/1927139201/Day-of-Dusk-The-Border-Beta" class="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-lg transition-colors">Play Now</a>
+            <a href="https://discord.gg/aegis" class="bg-[#2A2A2A] hover:bg-[#333333] text-white px-6 py-3 rounded-lg transition-colors">Join Discord</a>
+        </div>
+    </section>
+
+    <!-- Featured Sections -->
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-12">
+        <div class="bg-[#1A1A1A] p-6 rounded-lg hover:shadow-lg transition-shadow">
+            <h2 class="text-2xl font-bold text-red-500 mb-4">Equipment</h2>
+            <p class="text-gray-300 mb-4">Browse all weapons and tools available in Day of Dusk, including stats and acquisition methods.</p>
+            <a href="/equipment/" class="text-red-500 hover:text-red-400 transition-colors">View Equipment →</a>
+        </div>
+        <div class="bg-[#1A1A1A] p-6 rounded-lg hover:shadow-lg transition-shadow">
+            <h2 class="text-2xl font-bold text-red-500 mb-4">AEGIS</h2>
+            <p class="text-gray-300 mb-4">Learn about the AEGIS Corporation, its divisions, ranks, and protocols.</p>
+            <a href="/aegis/" class="text-red-500 hover:text-red-400 transition-colors">Explore AEGIS →</a>
+        </div>
+        <div class="bg-[#1A1A1A] p-6 rounded-lg hover:shadow-lg transition-shadow">
+            <h2 class="text-2xl font-bold text-red-500 mb-4">Lore</h2>
+            <p class="text-gray-300 mb-4">Read background information and story elements relevant to Day of Dusk.</p>
+            <a href="/lore/" class="text-red-500 hover:text-red-400 transition-colors">Read More →</a>
+        </div>
+    </section>
+</div>
+{{ end }} 

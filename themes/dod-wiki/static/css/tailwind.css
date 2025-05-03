@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+@layer components {
+    .infobox {
+        @apply bg-[#1A1A1A] border border-[#333] rounded-lg p-4 mb-4;
+    }
+    
+    .infobox-title {
+        @apply text-red-500 text-lg font-bold mb-2 border-b border-[#333] pb-2;
+    }
+    
+    .infobox-content {
+        @apply grid grid-cols-2 gap-2;
+    }
+    
+    .infobox-label {
+        @apply text-gray-400 font-medium;
+    }
+    
+    .infobox-value {
+        @apply text-gray-200;
+    }
+    
+    .wiki-content {
+        @apply prose prose-invert max-w-none;
+    }
+    
+    .wiki-content h1,
+    .wiki-content h2,
+    .wiki-content h3,
+    .wiki-content h4,
+    .wiki-content h5,
+    .wiki-content h6 {
+        @apply text-red-500;
+    }
+    
+    .wiki-content a {
+        @apply text-red-500 hover:text-red-400 transition-colors;
+    }
+    
+    .wiki-content ul,
+    .wiki-content ol {
+        @apply text-gray-300;
+    }
+    
+    .wiki-content p {
+        @apply text-gray-300;
+    }
+} 

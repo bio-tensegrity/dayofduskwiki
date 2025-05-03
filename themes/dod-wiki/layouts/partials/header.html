@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ .Title }} - {{ .Site.Title }}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="{{ "css/tailwind.min.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
+</head>
+<body class="bg-[#121212] text-gray-100">
+    <header class="sticky top-0 z-50 bg-[#1A1A1A] shadow-lg">
+        <nav class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <a href="{{ .Site.BaseURL }}" class="text-2xl font-bold text-red-500">Day of Dusk Wiki</a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <!-- Navigation -->
+                    <nav class="flex items-center space-x-4">
+                        <a href="/" class="text-white hover:text-red-500">Home</a>
+                        
+                        <!-- Equipment Dropdown -->
+                        <div class="relative group">
+                            <a href="/equipment/" class="text-white hover:text-red-500 flex items-center">
+                                Equipment
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </a>
+                            <div class="absolute hidden group-hover:block w-48 bg-[#1A1A1A] rounded-lg shadow-lg py-2 mt-2">
+                                <a href="/equipment/m4a1/" class="block px-4 py-2 text-white hover:text-red-500">M4A1</a>
+                                <a href="/equipment/ak47/" class="block px-4 py-2 text-white hover:text-red-500">AK-47</a>
+                                <a href="/equipment/glock/" class="block px-4 py-2 text-white hover:text-red-500">Glock</a>
+                            </div>
+                        </div>
+
+                        <!-- AEGIS Dropdown -->
+                        <div class="relative group">
+                            <a href="/aegis/" class="text-white hover:text-red-500 flex items-center">
+                                AEGIS
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </a>
+                            <div class="absolute hidden group-hover:block w-48 bg-[#1A1A1A] rounded-lg shadow-lg py-2 mt-2">
+                                <a href="/aegis/weapons/" class="block px-4 py-2 text-white hover:text-red-500">Weapons</a>
+                                <a href="/aegis/armor/" class="block px-4 py-2 text-white hover:text-red-500">Armor</a>
+                                <a href="/aegis/vehicles/" class="block px-4 py-2 text-white hover:text-red-500">Vehicles</a>
+                            </div>
+                        </div>
+
+                        <!-- Wasteland Dropdown -->
+                        <div class="relative group">
+                            <a href="/wasteland/" class="text-white hover:text-red-500 flex items-center">
+                                Wasteland
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </a>
+                            <div class="absolute hidden group-hover:block w-48 bg-[#1A1A1A] rounded-lg shadow-lg py-2 mt-2">
+                                <a href="/wasteland/weapons/" class="block px-4 py-2 text-white hover:text-red-500">Weapons</a>
+                                <a href="/wasteland/armor/" class="block px-4 py-2 text-white hover:text-red-500">Armor</a>
+                                <a href="/wasteland/vehicles/" class="block px-4 py-2 text-white hover:text-red-500">Vehicles</a>
+                            </div>
+                        </div>
+
+                        <!-- Locations Dropdown -->
+                        <div class="relative group">
+                            <a href="/locations/" class="text-white hover:text-red-500 flex items-center">
+                                Locations
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </a>
+                            <div class="absolute hidden group-hover:block w-48 bg-[#1A1A1A] rounded-lg shadow-lg py-2 mt-2">
+                                <a href="/locations/ruined-city/" class="block px-4 py-2 text-white hover:text-red-500">Ruined City</a>
+                                <a href="/locations/rockstar-volcano/" class="block px-4 py-2 text-white hover:text-red-500">Rockstar Volcano</a>
+                                <a href="/locations/zone-14/" class="block px-4 py-2 text-white hover:text-red-500">Zone 14</a>
+                            </div>
+                        </div>
+
+                        <!-- Diseases Button -->
+                        <a href="/diseases/" class="text-white hover:text-red-500">Diseases</a>
+
+                        <!-- Lore Dropdown -->
+                        <div class="relative group">
+                            <a href="/lore/" class="text-white hover:text-red-500 flex items-center">
+                                Lore
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </a>
+                            <div class="absolute hidden group-hover:block w-48 bg-[#1A1A1A] rounded-lg shadow-lg py-2 mt-2">
+                                <a href="/lore/resource-wars/" class="block px-4 py-2 text-white hover:text-red-500">The Resource Wars</a>
+                                <a href="/lore/aegis-corporation/" class="block px-4 py-2 text-white hover:text-red-500">AEGIS Corporation</a>
+                                <a href="/lore/rockstar-volcano/" class="block px-4 py-2 text-white hover:text-red-500">The Rockstar Volcano</a>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class="relative">
+                        <input type="search" placeholder="Search..." class="bg-[#2A2A2A] text-gray-100 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                    </div>
+                </div>
+
+                <!-- Mobile Navigation Button -->
+                <button class="md:hidden text-gray-300 hover:text-red-500" id="mobile-menu-button">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <div class="hidden md:hidden" id="mobile-menu">
+                <div class="pt-4 pb-3 space-y-1">
+                    <a href="/" class="block px-3 py-2 text-gray-300 hover:text-red-500">Home</a>
+                    
+                    <!-- Mobile Equipment Dropdown -->
+                    <div class="px-3 py-2">
+                        <a href="/equipment/" class="block text-gray-300 hover:text-red-500">Equipment</a>
+                        <div class="pl-4 mt-2 space-y-1">
+                            <a href="/equipment/m4a1/" class="block text-gray-300 hover:text-red-500">M4A1</a>
+                            <a href="/equipment/ak47/" class="block text-gray-300 hover:text-red-500">AK-47</a>
+                            <a href="/equipment/glock/" class="block text-gray-300 hover:text-red-500">Glock</a>
+                        </div>
+                    </div>
+
+                    <!-- Mobile AEGIS Dropdown -->
+                    <div class="px-3 py-2">
+                        <a href="/aegis/" class="block text-gray-300 hover:text-red-500">AEGIS</a>
+                        <div class="pl-4 mt-2 space-y-1">
+                            <a href="/aegis/weapons/" class="block text-gray-300 hover:text-red-500">Weapons</a>
+                            <a href="/aegis/armor/" class="block text-gray-300 hover:text-red-500">Armor</a>
+                            <a href="/aegis/vehicles/" class="block text-gray-300 hover:text-red-500">Vehicles</a>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Wasteland Dropdown -->
+                    <div class="px-3 py-2">
+                        <a href="/wasteland/" class="block text-gray-300 hover:text-red-500">Wasteland</a>
+                        <div class="pl-4 mt-2 space-y-1">
+                            <a href="/wasteland/weapons/" class="block text-gray-300 hover:text-red-500">Weapons</a>
+                            <a href="/wasteland/armor/" class="block text-gray-300 hover:text-red-500">Armor</a>
+                            <a href="/wasteland/vehicles/" class="block text-gray-300 hover:text-red-500">Vehicles</a>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Locations Dropdown -->
+                    <div class="px-3 py-2">
+                        <a href="/locations/" class="block text-gray-300 hover:text-red-500">Locations</a>
+                        <div class="pl-4 mt-2 space-y-1">
+                            <a href="/locations/ruined-city/" class="block text-gray-300 hover:text-red-500">Ruined City</a>
+                            <a href="/locations/rockstar-volcano/" class="block text-gray-300 hover:text-red-500">Rockstar Volcano</a>
+                            <a href="/locations/zone-14/" class="block text-gray-300 hover:text-red-500">Zone 14</a>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Diseases Button -->
+                    <div class="px-3 py-2">
+                        <a href="/diseases/" class="block text-gray-300 hover:text-red-500">Diseases</a>
+                    </div>
+
+                    <!-- Mobile Lore Dropdown -->
+                    <div class="px-3 py-2">
+                        <a href="/lore/" class="block text-gray-300 hover:text-red-500">Lore</a>
+                        <div class="pl-4 mt-2 space-y-1">
+                            <a href="/lore/resource-wars/" class="block text-gray-300 hover:text-red-500">The Resource Wars</a>
+                            <a href="/lore/aegis-corporation/" class="block text-gray-300 hover:text-red-500">AEGIS Corporation</a>
+                            <a href="/lore/rockstar-volcano/" class="block text-gray-300 hover:text-red-500">The Rockstar Volcano</a>
+                        </div>
+                    </div>
+
+                    <div class="px-3 py-2">
+                        <input type="search" placeholder="Search..." class="w-full bg-[#2A2A2A] text-gray-100 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html> 

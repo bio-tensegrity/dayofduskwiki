@@ -1,0 +1,133 @@
+{{ define "main" }}
+<div class="max-w-7xl mx-auto equipment-bg">
+    <h1 class="text-4xl font-bold text-red-500 mb-8">Equipment</h1>
+    
+    <!-- Filters -->
+    <div class="bg-[#1A1A1A] p-6 rounded-lg mb-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
+                <label class="block text-gray-300 mb-2">Type</label>
+                <select id="typeFilter" class="w-full bg-[#2A2A2A] text-gray-100 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                    <option value="">All</option>
+                    <option value="Weapon">Weapons</option>
+                    <option value="Tool">Tools</option>
+                </select>
+            </div>
+            <div id="factionFilterContainer" style="display:none;">
+                <label class="block text-gray-300 mb-2">Faction/Category</label>
+                <select id="factionFilter" class="w-full bg-[#2A2A2A] text-gray-100 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                    <option value="">All</option>
+                    <option value="AEGIS">AEGIS</option>
+                    <option value="Wastelander">Wastelander</option>
+                    <option value="DEW">DEW</option>
+                    <option value="Limited">Limited/Special Weaponry</option>
+                </select>
+            </div>
+            <div>
+                <label class="block text-gray-300 mb-2">Search</label>
+                <input id="searchInput" type="text" placeholder="Search by name or tag..." class="w-full bg-[#2A2A2A] text-gray-100 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+            </div>
+        </div>
+    </div>
+
+    <!-- Equipment Grid -->
+    <div id="equipmentGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {{ range .Pages }}
+        <div class="equipment-item bg-[#1A1A1A] rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+            data-type="{{ .Params.type }}"
+            data-faction="{{ with .Params.tags }}{{ delimit . "," }}{{ end }}"
+            data-title="{{ .Title | lower }}"
+            data-tags="{{ with .Params.tags }}{{ delimit . "," | lower }}{{ end }}">
+            <div class="p-6">
+                {{ with .Params.image }}
+                <img src="{{ . }}" alt="{{ $.Title }}" class="w-12 h-12 md:w-16 md:h-16 max-w-full max-h-full object-contain rounded bg-[#2A2A2A] mb-2">
+                {{ end }}
+                <h2 class="text-2xl font-bold text-red-500 mb-2">{{ .Title }}</h2>
+                <div class="text-sm text-gray-300 mb-2">
+                    <span class="font-semibold">Type:</span> {{ .Params.weapon_type | default .Params.type }}
+                    {{ with .Params.tags }}<span class="ml-4 font-semibold">Tags:</span> {{ delimit . ", " }}{{ end }}
+                </div>
+                {{ if eq .Params.type "AEGIS" }}
+                <div class="text-sm text-gray-400 mb-2">
+                    <span class="font-semibold">Damage:</span> {{ .Params.damage }}
+                    <span class="ml-4 font-semibold">Armour Pen:</span> {{ .Params.armour_penetration }}
+                    <span class="ml-4 font-semibold">Max Ammo:</span> {{ .Params.max_ammo }}
+                </div>
+                <div class="text-sm text-gray-400 mb-2">
+                    <span class="font-semibold">Attainability:</span> {{ .Params.attainability }}
+                </div>
+                {{ else if eq .Params.type "Weapon" }}
+                <div class="text-sm text-gray-400 mb-2">
+                    <span class="font-semibold">Damage:</span> {{ .Params.damage }}
+                    <span class="ml-4 font-semibold">Fire Rate:</span> {{ .Params.fire_rate }}
+                    <span class="ml-4 font-semibold">Accuracy:</span> {{ .Params.accuracy }}
+                </div>
+                {{ else if eq .Params.type "Tool" }}
+                <div class="text-sm text-gray-400 mb-2">
+                    <span class="font-semibold">Function:</span> {{ .Params.function }}
+                </div>
+                {{ with .Params.price }}
+                <div class="text-sm text-gray-400 mb-2">
+                    <span class="font-semibold">Price:</span> {{ . }}
+                </div>
+                {{ end }}
+                {{ with .Params.gamepass_link }}
+                <div class="text-sm text-gray-400 mb-2">
+                    <a href="{{ . }}" target="_blank" class="text-red-500 hover:text-red-400 underline">Gamepass Link</a>
+                </div>
+                {{ end }}
+                {{ end }}
+                <a href="{{ .RelPermalink }}" class="text-red-500 hover:text-red-400 transition-colors mt-2 inline-block">View Details →</a>
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</div>
+<script>
+// Equipment Type Filter
+const typeFilter = document.getElementById('typeFilter');
+const factionFilterContainer = document.getElementById('factionFilterContainer');
+const factionFilter = document.getElementById('factionFilter');
+const searchInput = document.getElementById('searchInput');
+const equipmentItems = document.querySelectorAll('.equipment-item');
+
+function filterEquipment() {
+    const typeValue = typeFilter.value;
+    const factionValue = factionFilter.value.toLowerCase();
+    const searchValue = searchInput.value.toLowerCase();
+    equipmentItems.forEach(item => {
+        let show = true;
+        if (typeValue && item.getAttribute('data-type') !== typeValue && !(typeValue === 'Weapon' && item.getAttribute('data-type') === 'AEGIS')) {
+            show = false;
+        }
+        if (typeValue === 'Weapon' && factionValue) {
+            const tags = item.getAttribute('data-tags') || '';
+            if (!tags.includes(factionValue)) {
+                show = false;
+            }
+        }
+        if (searchValue) {
+            const title = item.getAttribute('data-title') || '';
+            const tags = item.getAttribute('data-tags') || '';
+            if (!title.includes(searchValue) && !tags.includes(searchValue)) {
+                show = false;
+            }
+        }
+        item.style.display = show ? '' : 'none';
+    });
+}
+
+typeFilter.addEventListener('change', function() {
+    if (this.value === 'Weapon') {
+        factionFilterContainer.style.display = '';
+    } else {
+        factionFilterContainer.style.display = 'none';
+        factionFilter.value = '';
+    }
+    filterEquipment();
+});
+factionFilter.addEventListener('change', filterEquipment);
+searchInput.addEventListener('input', filterEquipment);
+window.addEventListener('DOMContentLoaded', filterEquipment);
+</script>
+{{ end }} 
